@@ -1,0 +1,9 @@
+td, th {
+  border: 2px solid black;
+  padding: 25px;
+
+}
+
+.title {
+  color: blue;
+}
