@@ -4,6 +4,7 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
   <title>Tic Tac Toe!</title>
     <h1 class='title'> Tic Tac Toe!</h1>
+    <button class='button' onClick='window.location.reload()'> Reset! </button>
 </head>
 <body>
   <table id='ticTac'>
@@ -27,34 +28,7 @@
       <td id='threeByThree'>  </td>
     </tr>
   </table>
-  <script>
-
-    var count = 0;
-
-    var ele1 = document.getElementById('oneByOne');
-    var ele2 = document.getElementById('oneByTwo');
-    var ele3 = document.getElementById('oneByThree');
-    var ele4 = document.getElementById('twoByOne');
-    var ele5 = document.getElementById('twoByTwo');
-    var ele6 = document.getElementById('twoByThree');
-    var ele7 = document.getElementById('threeByOne');
-    var ele8 = document.getElementById('threeByTwo');
-    var ele9 = document.getElementById('threeByThree');
-
-    ele1.addEventListener('click', () => {count % 2 === 0 ? ele1.innerHTML = 'X' : ele1.innerHTML = 'O'; count++});
-    ele2.addEventListener('click', () => {count % 2 === 0 ? ele2.innerHTML = 'X' : ele2.innerHTML = 'O'; count++});
-    ele3.addEventListener('click', () => {count % 2 === 0 ? ele3.innerHTML = 'X' : ele3.innerHTML = 'O'; count++});
-    ele4.addEventListener('click', () => {count % 2 === 0 ? ele4.innerHTML = 'X' : ele4.innerHTML = 'O'; count++});
-    ele5.addEventListener('click', () => {count % 2 === 0 ? ele5.innerHTML = 'X' : ele5.innerHTML = 'O'; count++});
-    ele6.addEventListener('click', () => {count % 2 === 0 ? ele6.innerHTML = 'X' : ele6.innerHTML = 'O'; count++});
-    ele7.addEventListener('click', () => {count % 2 === 0 ? ele7.innerHTML = 'X' : ele7.innerHTML = 'O'; count++});
-    ele8.addEventListener('click', () => {count % 2 === 0 ? ele8.innerHTML = 'X' : ele8.innerHTML = 'O'; count++});
-    ele9.addEventListener('click', () => {count % 2 === 0 ? ele9.innerHTML = 'X' : ele9.innerHTML = 'O'; count++});
-
-
-
-  </script>
-<script src='./client/app.js'></script>
+  <script src='./client/app.js'></script>
 </body>
 </html>
 

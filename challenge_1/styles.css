@@ -7,3 +7,7 @@ td, th {
 .title {
   color: blue;
 }
+
+.button {
+  font-weight: bold;
+}
