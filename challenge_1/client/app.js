@@ -2,7 +2,7 @@ var count = 0;
 var tableArr = [ [0, 0, 0],
                  [0, 0, 0],   
                  [0, 0, 0]
-                             ]
+                           ]
 
 // this creates an element variable that contains each rowXColumn 
   var ele1 = document.getElementById('oneByOne');
@@ -17,15 +17,15 @@ var tableArr = [ [0, 0, 0],
 
 
 // this adds an event listener to each rowXColumn
-  ele1.addEventListener('click', () => {count % 2 === 0 ? ele1.innerHTML = 'X' : ele1.innerHTML = 'O'; count++; tableArr[0][0] = 1});
-  ele2.addEventListener('click', () => {count % 2 === 0 ? ele2.innerHTML = 'X' : ele2.innerHTML = 'O'; count++; tableArr[0][1] = 1});
-  ele3.addEventListener('click', () => {count % 2 === 0 ? ele3.innerHTML = 'X' : ele3.innerHTML = 'O'; count++; tableArr[0][2] = 1});
-  ele4.addEventListener('click', () => {count % 2 === 0 ? ele4.innerHTML = 'X' : ele4.innerHTML = 'O'; count++; tableArr[1][0] = 1});
-  ele5.addEventListener('click', () => {count % 2 === 0 ? ele5.innerHTML = 'X' : ele5.innerHTML = 'O'; count++; tableArr[1][1] = 1});
-  ele6.addEventListener('click', () => {count % 2 === 0 ? ele6.innerHTML = 'X' : ele6.innerHTML = 'O'; count++; tableArr[1][2] = 1});
-  ele7.addEventListener('click', () => {count % 2 === 0 ? ele7.innerHTML = 'X' : ele7.innerHTML = 'O'; count++; tableArr[2][0] = 1});
-  ele8.addEventListener('click', () => {count % 2 === 0 ? ele8.innerHTML = 'X' : ele8.innerHTML = 'O'; count++; tableArr[2][1] = 1});
-  ele9.addEventListener('click', () => {count % 2 === 0 ? ele9.innerHTML = 'X' : ele9.innerHTML = 'O'; count++; tableArr[2][2] = 1});
+  ele1.addEventListener('click', () => {count % 2 === 0 ? ele1.innerHTML = 'X' : ele1.innerHTML = 'O'; count++; tableArr[0][0] = count});
+  ele2.addEventListener('click', () => {count % 2 === 0 ? ele2.innerHTML = 'X' : ele2.innerHTML = 'O'; count++; tableArr[0][1] = count});
+  ele3.addEventListener('click', () => {count % 2 === 0 ? ele3.innerHTML = 'X' : ele3.innerHTML = 'O'; count++; tableArr[0][2] = count});
+  ele4.addEventListener('click', () => {count % 2 === 0 ? ele4.innerHTML = 'X' : ele4.innerHTML = 'O'; count++; tableArr[1][0] = count});
+  ele5.addEventListener('click', () => {count % 2 === 0 ? ele5.innerHTML = 'X' : ele5.innerHTML = 'O'; count++; tableArr[1][1] = count});
+  ele6.addEventListener('click', () => {count % 2 === 0 ? ele6.innerHTML = 'X' : ele6.innerHTML = 'O'; count++; tableArr[1][2] = count});
+  ele7.addEventListener('click', () => {count % 2 === 0 ? ele7.innerHTML = 'X' : ele7.innerHTML = 'O'; count++; tableArr[2][0] = count});
+  ele8.addEventListener('click', () => {count % 2 === 0 ? ele8.innerHTML = 'X' : ele8.innerHTML = 'O'; count++; tableArr[2][1] = count});
+  ele9.addEventListener('click', () => {count % 2 === 0 ? ele9.innerHTML = 'X' : ele9.innerHTML = 'O'; count++; tableArr[2][2] = count});
 
 // this creates an event listener as well where if count hits 9, it alerts the page that the game is over
   ele1.addEventListener('click', () => {if (count === 9) {alert('GAME IS OVER')}});
@@ -50,23 +50,38 @@ var tableArr = [ [0, 0, 0],
   var textNine = document.getElementById('threeByThree').innerHTML;
 
 
-
-
-  var checkWinner = function() {
-
-    var arr = [];
-
-    arr.push(document.getElementById('oneByOne'));
-    arr.push(document.getElementById('oneByTwo'));
-    arr.push(document.getElementById('oneByThree'));
-    arr.push(document.getElementById('twoByOne'));
-    arr.push(document.getElementById('twoByTwo'));
-    arr.push(document.getElementById('twoByThree'));
-    arr.push(document.getElementById('threeByOne'));
-    arr.push(document.getElementById('threeByTwo'));
-    arr.push(document.getElementById('threeByThree'));
+var isEven = function(num) {
+  if (num < 1) {
+    return 0;
+  } else if (num % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
+// this will make X's false and O's true
+
+setInterval(function() {
+  for (var i = 0; i < tableArr.length; i++) {
+    for (var j = 0; j < tableArr.length; j++) {
+      if (typeof tableArr[i][j] === 'boolean') {
+      //  console.log('dont change me');
+      } else {
+      tableArr[i][j] = isEven(tableArr[i][j]);
+      }
+    }
+  }
+}, 1000)
+
+
+
+setInterval(function() {
+ // console.log(tableArr[0][0], tableArr[0][1], tableArr[0][2]);
+  if ((tableArr[0][0] === tableArr[0][1]) && (tableArr[0][0] === tableArr[0][2])) {
+   console.log('true');
+  }
+}, 3000)
 
 
 
