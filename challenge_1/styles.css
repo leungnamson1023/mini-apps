@@ -11,3 +11,12 @@ td, th {
 .button {
   font-weight: bold;
 }
+
+.disclaimers {
+  font-weight: bold;
+}
+
+.disclaimer {
+  font-size: 13px;
+  font-style: italic;
+}

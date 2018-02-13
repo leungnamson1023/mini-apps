@@ -78,13 +78,54 @@ setInterval(function() {
 
 setInterval(function() {
  // console.log(tableArr[0][0], tableArr[0][1], tableArr[0][2]);
-  if ((tableArr[0][0] === tableArr[0][1]) && (tableArr[0][0] === tableArr[0][2])) {
-   console.log('true');
+  if ((typeof tableArr[0][0] === 'boolean') && (tableArr[0][0] === tableArr[0][1]) && (tableArr[0][0] === tableArr[0][1])) {
+    alert('WINNER');
+    window.location.reload()
+  } else if ((typeof tableArr[0][0] === 'boolean') && (tableArr[0][0] === tableArr[1][0]) && (tableArr[0][0] === tableArr[2][0])) {
+    alert('WINNER');
+    window.location.reload()
+  } else if ((typeof tableArr[0][0] === 'boolean') && (tableArr[0][0] === tableArr[1][1]) && (tableArr[0][0] === tableArr[2][2])) {
+    alert('WINNER');
+    window.location.reload()
   }
-}, 3000)
+
+
+  if ((typeof tableArr[0][1] === 'boolean') && (tableArr[0][1] === tableArr[1][1]) && (tableArr[0][1] === tableArr[2][1])) {
+    alert('WINNER');
+    window.location.reload()
+  }
+
+  if ((typeof tableArr[0][2] === 'boolean') && (tableArr[0][2] === tableArr[1][1]) && (tableArr[0][2] === tableArr[2][0])) {
+    alert('WINNER');
+    window.location.reload()
+  }
+
+  if ((typeof tableArr[1][0] === 'boolean') && (tableArr[1][0] === tableArr[1][1]) && (tableArr[1][0] === tableArr[1][2])) {
+    alert('WINNER');
+    window.location.reload()
+  }
+
+  if ((typeof tableArr[2][0] === 'boolean') && (tableArr[2][0] === tableArr[2][1]) && (tableArr[2][0] === tableArr[2][2])) {
+    alert('WINNER');
+    window.location.reload()
+  } 
+}, 500)
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+// || 
+
+// 
 
