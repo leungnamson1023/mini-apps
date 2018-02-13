@@ -78,54 +78,64 @@ setInterval(function() {
 
 setInterval(function() {
  // console.log(tableArr[0][0], tableArr[0][1], tableArr[0][2]);
-  if ((typeof tableArr[0][0] === 'boolean') && (tableArr[0][0] === tableArr[0][1]) && (tableArr[0][0] === tableArr[0][1])) {
-    alert('WINNER');
-    window.location.reload()
+  if ((typeof tableArr[0][0] === 'boolean') && (tableArr[0][0] === tableArr[0][1]) && (tableArr[0][0] === tableArr[0][2])) {
+    resetBoard();
   } else if ((typeof tableArr[0][0] === 'boolean') && (tableArr[0][0] === tableArr[1][0]) && (tableArr[0][0] === tableArr[2][0])) {
-    alert('WINNER');
-    window.location.reload()
+    resetBoard();
   } else if ((typeof tableArr[0][0] === 'boolean') && (tableArr[0][0] === tableArr[1][1]) && (tableArr[0][0] === tableArr[2][2])) {
-    alert('WINNER');
-    window.location.reload()
+    resetBoard();
   }
 
 
   if ((typeof tableArr[0][1] === 'boolean') && (tableArr[0][1] === tableArr[1][1]) && (tableArr[0][1] === tableArr[2][1])) {
-    alert('WINNER');
-    window.location.reload()
+    resetBoard();
   }
 
   if ((typeof tableArr[0][2] === 'boolean') && (tableArr[0][2] === tableArr[1][1]) && (tableArr[0][2] === tableArr[2][0])) {
-    alert('WINNER');
-    window.location.reload()
+    resetBoard();
+  } else if ((typeof tableArr[0][2] === 'boolean') && (tableArr[0][2] === tableArr[1][2]) && (tableArr[0][2] === tableArr[2][2])) {
+    resetBoard();
   }
 
   if ((typeof tableArr[1][0] === 'boolean') && (tableArr[1][0] === tableArr[1][1]) && (tableArr[1][0] === tableArr[1][2])) {
-    alert('WINNER');
-    window.location.reload()
+    resetBoard();
   }
 
   if ((typeof tableArr[2][0] === 'boolean') && (tableArr[2][0] === tableArr[2][1]) && (tableArr[2][0] === tableArr[2][2])) {
-    alert('WINNER');
-    window.location.reload()
+    resetBoard();
   } 
 }, 500)
 
 
 
+var resetBoard = function() {
 
 
+if (count % 2 === 0) {
+  document.getElementById('winner').innerHTML = 'Player 2';
+} else if (count % 2 !== 0) {
+  document.getElementById('winner').innerHTML = 'Player 1';
+} else {
+  return;
+}
+
+for (var i = 0; i < tableArr.length; i++) {
+    for (var j = 0; j < tableArr.length; j++) {
+      tableArr[i][j] = 0;
+    }
+  }
 
 
+  ele1.innerHTML = '';
+  ele2.innerHTML = '';
+  ele3.innerHTML = '';
+  ele4.innerHTML = '';
+  ele5.innerHTML = '';
+  ele6.innerHTML = '';
+  ele7.innerHTML = '';
+  ele8.innerHTML = '';
+  ele9.innerHTML = '';
+  count = 0;
 
-
-
-
-
-
-
-
-// || 
-
-// 
+}
 
