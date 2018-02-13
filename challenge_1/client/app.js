@@ -4,6 +4,14 @@ var tableArr = [ [0, 0, 0],
                  [0, 0, 0]
                            ]
 
+var playOne = 0;
+var playTwo = 0;
+
+
+document.getElementById('countOne').innerHTML = playOne;
+document.getElementById('countTwo').innerHTML = playTwo;
+
+
 // this creates an element variable that contains each rowXColumn 
   var ele1 = document.getElementById('oneByOne');
   var ele2 = document.getElementById('oneByTwo');
@@ -113,8 +121,14 @@ var resetBoard = function() {
 
 if (count % 2 === 0) {
   document.getElementById('winner').innerHTML = 'Player 2';
+  count = 1;
+  playOne++;
+  document.getElementById('countTwo').innerHTML = playOne;
 } else if (count % 2 !== 0) {
   document.getElementById('winner').innerHTML = 'Player 1';
+  count = 2;
+  playTwo++;
+  document.getElementById('countOne').innerHTML = playTwo;  
 } else {
   return;
 }
@@ -135,7 +149,7 @@ for (var i = 0; i < tableArr.length; i++) {
   ele7.innerHTML = '';
   ele8.innerHTML = '';
   ele9.innerHTML = '';
-  count = 0;
+
 
 }
 
