@@ -88,7 +88,6 @@ class App extends React.Component {
   }
   
 
-
   /***** THESE FUNCS CHECKS THE BOARD ******/
   // this check can start from row 4 and up because you need a min of four to win
   vertical (board) {
@@ -161,7 +160,6 @@ class App extends React.Component {
 
   render () {
     return (
-        <h1 className="message">{this.state.message}</h1>
       <div>
 
         <button className="button" onClick={() => {this.createBoard()}}> New Game</button>
@@ -175,6 +173,7 @@ class App extends React.Component {
             <ul>{this.state.playerOneScore}</ul>
           <div> Player Two: </div>
             <ul>{this.state.playerTwoScore}</ul>
+        <p className="message">{this.state.message}</p>
 
       </div>
     );

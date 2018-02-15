@@ -5,7 +5,7 @@ const Cell = (props) => {
   if (props.value === 1) {
     color = 'red';
   } else if (props.value === 2) {
-    color = 'black';
+    color = 'yellow';
   }
     
   return (
