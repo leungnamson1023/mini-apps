@@ -22,8 +22,10 @@ class App extends React.Component {
 
   // this func, depending on which button that is clicked, will subtract the total pins and turn num
   togglePin (e) {
-    console.log(e.target.className);
-    
+   // console.log(typeof parseInt(e.target.value));
+   if (this.state)
+    var pinHit = parseInt(e.target.value);
+
   }
 
   componentWillMount () {
@@ -49,17 +51,17 @@ class App extends React.Component {
     return (
       <div>
         <div className="buttons">
-          <button className="gutter" onClick={(e) => this.togglePin(e)}> Gutter Ball! </button>
-          <button className="one" onClick={(e) => this.togglePin(e)}> Hit One Pins </button>
-          <button className="two" onClick={(e) => this.togglePin(e)}> Hit Two Pins </button>
-          <button className="three" onClick={(e) => this.togglePin(e)}> Hit Three Pins </button>
-          <button className="four" onClick={(e) => this.togglePin(e)}> Hit Four Pins </button>
-          <button className="five" onClick={(e) => this.togglePin(e)}> Hit Five Pins </button>
-          <button className="six" onClick={(e) => this.togglePin(e)}> Hit Six Pins </button>
-          <button className="seven" onClick={(e) => this.togglePin(e)}> Hit Seven Pins </button>
-          <button className="eight" onClick={(e) => this.togglePin(e)}> Hit Eight Pins </button>
-          <button className="nine" onClick={(e) => this.togglePin(e)}> Hit Nine Pins </button>
-          <button className="strike" onClick={(e) => this.togglePin(e)}> Hit a Strike! </button>
+          <button className="gutter" value="0" onClick={(e) => this.togglePin(e)}> Gutter Ball! </button>
+          <button className="one" value="1" onClick={(e) => this.togglePin(e)}> Hit One Pins </button>
+          <button className="two" value="2" onClick={(e) => this.togglePin(e)}> Hit Two Pins </button>
+          <button className="three" value="3" onClick={(e) => this.togglePin(e)}> Hit Three Pins </button>
+          <button className="four" value="4" onClick={(e) => this.togglePin(e)}> Hit Four Pins </button>
+          <button className="five" value="5" onClick={(e) => this.togglePin(e)}> Hit Five Pins </button>
+          <button className="six" value="6" onClick={(e) => this.togglePin(e)}> Hit Six Pins </button>
+          <button className="seven" value="7" onClick={(e) => this.togglePin(e)}> Hit Seven Pins </button>
+          <button className="eight" value="8" onClick={(e) => this.togglePin(e)}> Hit Eight Pins </button>
+          <button className="nine" value="9" onClick={(e) => this.togglePin(e)}> Hit Nine Pins </button>
+          <button className="strike" value="10" onClick={(e) => this.togglePin(e)}> Hit a Strike! </button>
         </div>
 
       <div>
