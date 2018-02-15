@@ -1,0 +1,20 @@
+.frames {
+  border-style: solid;
+  border-spacing: 15px;
+  padding: 40px;  
+}
+
+.mini {
+  border-style: solid;
+  position: fixed;
+  padding: 5px;
+  top: 65px;
+}
+
+.buttons {
+  padding: 10px;
+}
+
+.gutter, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .strike {
+  padding: 10px;
+}
