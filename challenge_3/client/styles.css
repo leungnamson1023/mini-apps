@@ -1,0 +1,36 @@
+table {
+  margin: 0 auto;
+  border-spacing: 0px 0px;
+}
+
+.cell {
+  height: 70px;
+  width: 70px;
+  background-color: blue;
+}
+
+.message {
+  text-align: center;
+  font-size: 17px;
+}
+
+.white {
+  height: 60px;
+  width: 60px;
+  background-color: white;
+  border-radius: 35px;
+}
+
+.red {
+  height: 60px;
+  width: 60px;
+  background-color: red;
+  border-radius: 35px;
+}
+
+.black {
+  height: 60px;
+  width: 60px;
+  background-color: black;
+  border-radius: 35px;
+}
