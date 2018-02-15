@@ -103,7 +103,6 @@ class App extends React.Component {
     }
   }
 
-
   // horizontal rows can win anywhere, but only up to the 5th column
   horizontal (board) {
     for (let r = 0; r < 6; r++) {
@@ -155,15 +154,14 @@ class App extends React.Component {
     return 'draw';    
   }
   
-
  // this function is to invoke all checks when invoked, to see which player wins or if it was a draw
   checkAll (board) {
     return this.vertical(board) || this.diagonalRight(board) || this.diagonalLeft(board) || this.horizontal(board) || this.draw(board);
   }
 
-
   render () {
     return (
+        <h1 className="message">{this.state.message}</h1>
       <div>
 
         <button className="button" onClick={() => {this.createBoard()}}> New Game</button>
@@ -177,7 +175,6 @@ class App extends React.Component {
             <ul>{this.state.playerOneScore}</ul>
           <div> Player Two: </div>
             <ul>{this.state.playerTwoScore}</ul>
-        <p className="message">{this.state.message}</p>
 
       </div>
     );
