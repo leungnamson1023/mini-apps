@@ -25,7 +25,7 @@ class App extends React.Component {
    // console.log(typeof parseInt(e.target.value));
    if (this.state)
     var pinHit = parseInt(e.target.value);
-
+   console.log(ReactDom.findDOMNode('frames'))
   }
 
   componentWillMount () {
@@ -44,9 +44,6 @@ class App extends React.Component {
     });
   }
 
-
-
-
   render () {
     return (
       <div>
@@ -63,9 +60,8 @@ class App extends React.Component {
           <button className="nine" value="9" onClick={(e) => this.togglePin(e)}> Hit Nine Pins </button>
           <button className="strike" value="10" onClick={(e) => this.togglePin(e)}> Hit a Strike! </button>
         </div>
-
       <div>
-      {this.state.frame.map((frame, i) => <Frame keys={i} frame={frame} />)}
+        {this.state.frame.map((frame, i) => <Frame keys={i} frame={frame} />)}
       </div>
 
       </div>
@@ -77,7 +73,7 @@ class App extends React.Component {
 const Frame = (props) => {
   return (
     <td>
-      <div className="frames"> Frames </div>
+      <div className={props.keys}> Frames </div>
         <td>
           <div className="mini"> miniFrames </div>
         </td>
