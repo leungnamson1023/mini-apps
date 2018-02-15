@@ -3,9 +3,9 @@ import Cell from './CellView.jsx';
 
 const Row = (props) => {
   return (
-    <tr>
+    <div>
       {props.row.map((cell, i) => <Cell key={i} value={cell} columnIndex={i} togglePiece={props.togglePiece} />)}
-    </tr>
+    </div>
   );
 };
 
