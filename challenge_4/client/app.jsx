@@ -8,10 +8,10 @@ class App extends React.Component {
     this.state = {
       frame: [],
       runningTotal: 0,
-      gameTotal: 0,
-      firstThrow: 0,
-      secondThrow: 0,
-      bonuses: 0,
+      currFrame: 0,
+      frameTotal: 0,
+      miniScore: [],
+      miniTurn: 0,
       totalPins: 10,
       turn: 2,
       lastFrameTurn: 3
@@ -22,10 +22,34 @@ class App extends React.Component {
 
   // this func, depending on which button that is clicked, will subtract the total pins and turn num
   togglePin (e) {
-   // console.log(typeof parseInt(e.target.value));
-   if (this.state)
-    var pinHit = parseInt(e.target.value);
-   console.log(ReactDom.findDOMNode('frames'))
+    let score = parseInt(e.target.value);
+    let frame = this.state.frame;
+    let miniFrame = this.state.miniScore;
+    let totalPins = this.state.totalPins;
+    this.setState({runningTotal: this.state.runningTotal + score});
+   // console.log(this.state.frame);
+   if (this.state.turn === 2) { // first throw
+    for (let m = 0; m < 3; m++) {
+      this.setState({totalPins: this.state.totalPins - score, turn: this.state.turn - 1})
+      if(frame[this.state.currFrame][m] === 0) {
+        frame[this.state.currFrame][m] = score;
+        break;
+      }
+    }
+  } else if (this.state.turn === 1) { // second throw
+      for (let m = 0; m < 2; m++) {
+        if (score > this.state.totalPins) {
+          alert('incorrect amount of pins');
+          break;
+        } else {
+          if (frame[this.state.currFrame][m] === 0) {
+            frame[this.state.currFrame][m] = score;
+            this.setState({turn: 2, totalPins: 10, currFrame: this.state.currFrame + 1})
+            break;            
+          }
+        }
+      }
+    }
   }
 
   componentWillMount () {
@@ -35,12 +59,19 @@ class App extends React.Component {
   // this function creates the whole frame
   frameCreator () {
     let frame = [];
+    let miniScore = [];
     for (let i = 0; i < 10; i++) {
+      miniScore.push(null);
       let miniFrames = [0, 0];
+      if (i === 9) {
+        frame.push([0, 0, 0]);
+      } else { 
       frame.push(miniFrames);
+      }
     }
     this.setState({
       frame: frame,
+      miniScore: miniScore
     });
   }
 
@@ -60,11 +91,10 @@ class App extends React.Component {
           <button className="nine" value="9" onClick={(e) => this.togglePin(e)}> Hit Nine Pins </button>
           <button className="strike" value="10" onClick={(e) => this.togglePin(e)}> Hit a Strike! </button>
         </div>
-      <div>
-        {this.state.frame.map((frame, i) => <Frame keys={i} frame={frame} />)}
-      </div>
-
-      </div>
+       <div>
+        {this.state.frame.map((frame, i) => <Frame keys={i} frame={this.state.frame} frameTotal={this.state.frameTotal} miniScore={this.state.miniScore} pin={this.togglePin} />)}
+       </div>
+     </div>
     )
   }
 }
@@ -73,14 +103,11 @@ class App extends React.Component {
 const Frame = (props) => {
   return (
     <td>
-      <div className={props.keys}> Frames </div>
-        <td>
-          <div className="mini"> miniFrames </div>
-        </td>
+      <div className={props.keys}>{props.miniScore[props.keys]}</div>
+        <div className={`mini${props.keys}`}>{props.frame[props.keys]}</div>
     </td>
   )
 }
-
 
 
 
